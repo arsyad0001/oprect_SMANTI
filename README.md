@@ -24,7 +24,7 @@ Web aplikasi pendaftaran panitia acara sekolah interaktif berbasis **Python (Fla
 
 ```bash
 # 1. Clone Repositori
-git clone [https://github.com/arsyad0001/oprect_SMANTI.git](https://github.com/arsyad0001/oprect_SMANTI.git)
+git clone https://github.com/arsyad0001/oprect_SMANTI.git
 cd oprect_SMANTI
 
 # 2. Buat & Aktifkan Virtual Environment
