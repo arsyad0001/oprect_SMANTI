@@ -26,3 +26,19 @@ Web aplikasi pendaftaran panitia acara sekolah interaktif berbasis **Python (Fla
 ```bash
 git clone https://github.com/arsyad0001/oprect_SMANTI.git
 cd oprect_SMANTI
+2. Buat & Aktifkan Virtual Environment
+Bash
+python -m venv venv
+venv\Scripts\activate.bat
+3. Install Dependencies
+Bash
+pip install -r requirements.txt
+4. Konfigurasi Environment Variable
+Bash
+copy .env.example .env
+(Buka file .env lalu isi ID Spreadsheet dan Secret Key)
+
+5. Jalankan Aplikasi
+Bash
+python app.py
+(Buka browser di http://127.0.0.1:5000)
