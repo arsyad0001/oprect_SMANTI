@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oprec Panitia Acara Sekolah</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; max-width: 500px; }
+        .card { border: 1px solid #ddd; padding: 12px; margin-bottom: 12px; border-radius: 6px; background-color: #f9f9f9; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, select, button { width: 100%; padding: 9px; box-sizing: border-box; border-radius: 4px; border: 1px solid #ccc; }
+        button { background-color: #007bff; color: white; border: none; font-size: 16px; font-weight: bold; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+        .alert-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; padding: 10px; border-radius: 4px; margin-bottom: 15px; }
+        .alert-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 10px; border-radius: 4px; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <h2>Pendaftaran Panitia Acara Sekolah</h2>
+    <p>Silakan pelajari tugas divisi di bawah ini dan isi formulir pendaftaran.</p>
+
+    <!-- KETERANGAN DIVISI PANITIA -->
+    <div class="card">
+        <h3 style="margin-top:0;">1. Panitia Perlengkapan</h3>
+        <p style="margin-bottom:0;">Bertanggung jawab menyiapkan, mengatur, dan mengurus ketersediaan barang, panggung, dan sarana prasarana acara.</p>
+    </div>
+
+    <div class="card">
+        <h3 style="margin-top:0;">2. Panitia Keamanan</h3>
+        <p style="margin-bottom:0;">Bertanggung jawab menjaga ketertiban, keamanan lokasi, serta alur lalu lintas peserta selama acara berlangsung.</p>
+    </div>
+
+    <hr style="margin: 20px 0;">
+
+    <!-- FORMULIR PENDAFTARAN -->
+    <h3>Formulir Pendaftaran</h3>
+
+    <!-- Notifikasi Pesan dari Backend Flask -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form action="/submit" method="POST">
+        
+        <!-- INPUT 1: NAMA LENGKAP -->
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama" required placeholder="Contoh: Arsyadzaky Artupaldi">
+        </div>
+
+        <!-- INPUT 2: KELAS -->
+        <div class="form-group">
+            <label for="kelas">Kelas:</label>
+            <input type="text" id="kelas" name="kelas" required placeholder="Contoh: 10 F">
+        </div>
+
+        <!-- INPUT 3: PILIHAN PANITIA -->
+        <div class="form-group">
+            <label for="panitia">Pilih Divisi Panitia:</label>
+            <select id="panitia" name="panitia" required>
+                <option value="">-- Pilih Panitia --</option>
+                <option value="Perlengkapan">Panitia Perlengkapan</option>
+                <option value="Keamanan">Panitia Keamanan</option>
+            </select>
+        </div>
+
+        <!-- 💡 CARA NAMBAH QUESIONER BARU KELAK:
+             Tinggal COPY 1 blok <div class="form-group">...</div> di atas, lalu PASTE di bawah sini! -->
+
+        <button type="submit">Kirim Pendaftaran</button>
+    </form>
+
+</body>
+</html>
