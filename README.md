@@ -24,5 +24,7 @@ Web aplikasi pendaftaran panitia acara sekolah interaktif berbasis **Python (Fla
 
 ### 1. Clone Repositori
 ```bash
-git clone [https://github.com/username-kamu/oprec-sekolah.git](https://github.com/username-kamu/oprec-sekolah.git)
+1. **Clone Repositori**
+```bash
+git clone [https://github.com/arsyad0001/oprect_SMANTI.git](https://github.com/arsyad0001/oprect_SMANTI.git)
 cd oprec-sekolah
