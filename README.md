@@ -1,1 +1,43 @@
-# ?? Portal Pendaftaran Panitia Acara Sekolah`n`nWeb aplikasi pendaftaran panitia acara sekolah interaktif berbasis **Python (Flask)** yang terintegrasi secara otomatis dengan **Google Sheets API** sebagai basis penyimpanan data pendaftar.`n`n---`n`n## ??? Tech Stack`n- **Frontend:** HTML5, CSS3 (Responsive Design)`n- **Backend:** Python (Flask Framework)`n- **Database / API Integration:** Google Sheets API (`gspread`, `oauth2client`)`n- **Environment Management:** `python-dotenv``n`n---`n`n## ?? Fitur Utama`n1. **Informasi Divisi:** Penjelasan tugas untuk Panitia Perlengkapan dan Panitia Keamanan.`n2. **Formulir Pendaftaran:** Input data pendaftar (Nama Lengkap, Kelas, Pilihan Divisi).`n3. **Real-time Google Sheets Storage:** Data dari formulir otomatis tersimpan ke Google Sheets tanpa penyimpanan lokal.`n4. **Environment Security:** Seluruh kunci rahasia API disimpan aman menggunakan file `.env` dan diabaikan dari repositori melalui `.gitignore`.`n`n---`n`n## ?? Cara Menjalankan Aplikasi di Komputer Lokal`n`n### 1. Clone Repositori`n```bash`ngit clone [https://github.com/arsyad0001/oprect_SMANTI.git](https://github.com/arsyad0001/oprect_SMANTI.git)`ncd oprect_SMANTI`n````n`n### 2. Buat & Aktifkan Virtual Environment`n```bash`npython -m venv venv`nvenv\Scripts\activate.bat`n````n`n### 3. Install Dependencies`n```bash`npip install -r requirements.txt`n````n`n### 4. Konfigurasi Environment Variable`n```bash`ncopy .env.example .env`n````n*(Buka file .env lalu isi ID Spreadsheet dan Secret Key)*`n`n### 5. Jalankan Aplikasi`n```bash`npython app.py`n````n*(Buka browser di http://127.0.0.1:5000)
+# 📋 Portal Pendaftaran Panitia Acara Sekolah
+
+Web aplikasi pendaftaran panitia acara sekolah interaktif berbasis **Python (Flask)** yang terintegrasi secara otomatis dengan **Google Sheets API** sebagai basis penyimpanan data pendaftar.
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** HTML5, CSS3 (Responsive Design)
+- **Backend:** Python (Flask Framework)
+- **Database / API Integration:** Google Sheets API (`gspread`, `oauth2client`)
+- **Environment Management:** `python-dotenv`
+
+---
+
+## 🚀 Fitur Utama
+1. **Informasi Divisi:** Penjelasan tugas untuk Panitia Perlengkapan dan Panitia Keamanan.
+2. **Formulir Pendaftaran:** Input data pendaftar (Nama Lengkap, Kelas, Pilihan Divisi).
+3. **Real-time Google Sheets Storage:** Data dari formulir otomatis tersimpan ke Google Sheets tanpa penyimpanan lokal.
+4. **Environment Security:** Seluruh kunci rahasia API disimpan aman menggunakan file `.env` dan diabaikan dari repositori melalui `.gitignore`.
+
+---
+
+## ⚙️ Cara Menjalankan Aplikasi di Komputer Lokal
+
+```bash
+# 1. Clone Repositori
+git clone [https://github.com/arsyad0001/oprect_SMANTI.git](https://github.com/arsyad0001/oprect_SMANTI.git)
+cd oprect_SMANTI
+
+# 2. Buat & Aktifkan Virtual Environment
+python -m venv venv
+venv\Scripts\activate.bat
+
+# 3. Install Dependencies
+pip install -r requirements.txt
+
+# 4. Konfigurasi Environment Variable
+copy .env.example .env
+# (Buka file .env lalu isi ID Spreadsheet dan Secret Key)
+
+# 5. Jalankan Aplikasi
+python app.py
+# (Buka browser di [http://127.0.0.1:5000](http://127.0.0.1:5000))
