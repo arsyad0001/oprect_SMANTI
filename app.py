@@ -12,6 +12,10 @@ app = Flask(__name__)
 # Mengambil secret key Flask dari file .env
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "default_secret_key")
 
+# Deteksi folder tempat app.py berada secara otomatis
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CREDENTIALS_PATH = os.path.join(BASE_DIR, 'credentials.json')
+
 # 2. Fungsi untuk melakukan koneksi ke Google Sheets API
 def get_google_sheet():
     # Mengatur hak akses (scope) ke Google Drive & Sheets
@@ -20,8 +24,8 @@ def get_google_sheet():
         "https://www.googleapis.com/auth/drive"
     ]
     
-    # Autentikasi menggunakan file credentials.json
-    creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+    # Autentikasi menggunakan file credentials.json dengan jalur absolut
+    creds = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_PATH, scope)
     client = gspread.authorize(creds)
     
     # Buka spreadsheet berdasarkan SPREADSHEET_ID yang ada di file .env
